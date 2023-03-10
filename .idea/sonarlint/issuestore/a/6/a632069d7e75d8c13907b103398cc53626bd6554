@@ -1,0 +1,85 @@
+
+o
+java:S2293&"YReplace the type specification in this constructor call with the diamond operator ("<>").(ûÂÁ»
+t
+java:S2293'"YReplace the type specification in this constructor call with the diamond operator ("<>").(Å€èşÿÿÿÿ
+t
+java:S2293("YReplace the type specification in this constructor call with the diamond operator ("<>").(’ÒÎ»şÿÿÿÿ
+p
+java:S2293ˆ"YReplace the type specification in this constructor call with the diamond operator ("<>").(ê‰ôÀ
+p
+java:S2293›"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ÿˆ£‘
+u
+java:S2293§"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÁãÁ€ûÿÿÿÿ
+m
+java:S1192w"RDefine a constant instead of duplicating this literal "Sensor created : " 3 times.(û×¨úÿÿÿÿ
+i
+java:S1192J"SDefine a constant instead of duplicating this literal "service_smartphone" 6 times.(Ö¥„Ü
+h
+java:S1192I"MDefine a constant instead of duplicating this literal "service_box" 21 times.(ø¶ı‘ÿÿÿÿÿ
+g
+java:S1192Ğ"PDefine a constant instead of duplicating this literal "NOTIFICATION_D4" 4 times.(Æ²Ü®
+b
+java:S1192H"LDefine a constant instead of duplicating this literal "service_fog" 8 times.(ŸÑë®
+q
+java:S1192~"VDefine a constant instead of duplicating this literal "Fog device created : " 3 times.(î‡Èúÿÿÿÿ
+e
+java:S1192o"ODefine a constant instead of duplicating this literal "TEMPERATURE_D2" 7 times.(ÃÎÇ‚
+`
+java:S1192l"JDefine a constant instead of duplicating this literal "CAMERA_D1" 7 times.(œ´ÊÅ
+`
+java:S1192r"JDefine a constant instead of duplicating this literal "SENSOR_D3" 7 times.(«ãÔÃ
+f	java:S1176"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÎÕéÌ
+e	java:S1178"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßë†#
+g	java:S117¡"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ã®ñÕ
+g	java:S117é"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼¤ÙÅ
+f	java:S117ê"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©»Æ
+g	java:S117ë"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(™áÜ°
+g	java:S117í"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–Í’µ
+g	java:S117î"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘ËĞ¯
+l	java:S117ï"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÙííÇúÿÿÿÿ
+j
+java:S2184h"HCast one of the operands of this multiplication operation to a "double".(Šıµæüÿÿÿÿ8ßÉüØã0
+^
+java:S2259¶"GA "NullPointerException" could be thrown; "fogdevice" is nullable here.(µ°ºæ
+W	java:S107…"<Method has 9 parameters, which is greater than 7 authorized.(«²ˆÎÿÿÿÿÿ
+U	java:S8991";Do something with the "boolean" value returned by "delete".(ÀäÈâÿÿÿÿÿ
+i
+java:S40421"NUse "java.nio.file.Files#delete" here for better messages on error conditions.(ÀäÈâÿÿÿÿÿ
+\	java:S8992"BDo something with the "boolean" value returned by "createNewFile".(Ğ’Íùÿÿÿÿ
+S	java:S106w"9Replace this use of System.out or System.err by a logger.(û×¨úÿÿÿÿ
+S	java:S106y"9Replace this use of System.out or System.err by a logger.(¬±ı´úÿÿÿÿ
+N	java:S106{"9Replace this use of System.out or System.err by a logger.(ıöÄÙ
+S	java:S106~"9Replace this use of System.out or System.err by a logger.(î‡Èúÿÿÿÿ
+O	java:S106€"9Replace this use of System.out or System.err by a logger.(²§¿±
+O	java:S106‚"9Replace this use of System.out or System.err by a logger.(˜ÇÇÙ
+C
+java:S3599é",Use another way to initialize this instance.(¼¤ÙÅ
+p
+java:S1171é"YMove the contents of this initializer to a standard constructor or to field initializers.(¼¤ÙÅ
+B
+java:S3599ê",Use another way to initialize this instance.(©»Æ
+o
+java:S1171ê"YMove the contents of this initializer to a standard constructor or to field initializers.(©»Æ
+C
+java:S3599ë",Use another way to initialize this instance.(™áÜ°
+p
+java:S1171ë"YMove the contents of this initializer to a standard constructor or to field initializers.(™áÜ°
+C
+java:S3599í",Use another way to initialize this instance.(–Í’µ
+p
+java:S1171í"YMove the contents of this initializer to a standard constructor or to field initializers.(–Í’µ
+C
+java:S3599î",Use another way to initialize this instance.(‘ËĞ¯
+p
+java:S1171î"YMove the contents of this initializer to a standard constructor or to field initializers.(‘ËĞ¯
+H
+java:S3599ï",Use another way to initialize this instance.(ÙííÇúÿÿÿÿ
+u
+java:S1171ï"YMove the contents of this initializer to a standard constructor or to field initializers.(ÙííÇúÿÿÿÿ
+C
+java:S3599ğ",Use another way to initialize this instance.(ş™˜å
+p
+java:S1171ğ"YMove the contents of this initializer to a standard constructor or to field initializers.(ş™˜å
+g
+java:S1128"ERemove this unused import 'org.fog.placement.ModulePlacementMapping'.(¾Êáûÿÿÿÿ8è¸àØã0
