@@ -58,7 +58,7 @@ public class SmartCityConstants {
     public static final int GATEWAY_MIPS = 100;
     public static final int GATEWAY_RAM = 1000;
     public static final int NUM_SENSORS_PER_GATEWAY = 10;
-    public static final int NUM_SERVICE_INSTANCES = 1000; // 1 service = 1 gateway with 10 sensors
+    public static final int NUM_SERVICE_INSTANCES = NUM_GATEWAYS * NUM_SENSORS_PER_GATEWAY; // 1 service = 1 sensor
     public static final int NUM_CONSUMERS_PER_DATA = 1;
     public static final double REPRODUCTION_RATE = 0.1;
     public static final int DATA_PROCESSING_REQUIREMENT_MIN = 10;
