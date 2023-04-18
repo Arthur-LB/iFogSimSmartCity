@@ -259,15 +259,8 @@ public class FogDevice extends PowerDatacenter {
 		setModuleInstanceCount(new HashMap<String, Map<String, Integer>>());
 	}
 
-	/**
-	 * Overrides this method when making a new and different type of resource. <br>
-	 * <b>NOTE:</b> You do not need to override {@link #body()} method, if you use this method.
-	 *
-	 * @pre $none
-	 * @post $none
-	 */
-	protected void registerOtherEntity() {
-
+    public FogDevice(String name, FogDeviceCharacteristics characteristics, AppModuleAllocationPolicy appModuleAllocationPolicy, LinkedList<Storage> storageList, int i, double uplinkBandwidth, double downlinkBandwidth, double latency, double ratePerMips) throws Exception {
+		super(name, characteristics, appModuleAllocationPolicy, storageList, 0);
 	}
 
 	@Override

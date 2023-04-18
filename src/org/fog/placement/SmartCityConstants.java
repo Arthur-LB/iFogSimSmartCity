@@ -90,10 +90,12 @@ public class SmartCityConstants {
     public static List<FogDevice> gateways = new ArrayList<FogDevice>();
     public static List<Sensor> sensors = new ArrayList<Sensor>();
     public static List<Actuator> actuators = new ArrayList<Actuator>();
+    public static List<FogDevice> fogDevices = new ArrayList<FogDevice>();
 
     public static String datacenterPrefix = "DC-";
     public static String rfogPrefix = "RFOG-";
     public static String lfogPrefix = "LFOG-";
     public static String gatewayPrefix = "HGW-";
     public static String sensorPrefix = "s-";
+    public static String actuatorPrefix = "a-";
 }
