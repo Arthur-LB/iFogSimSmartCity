@@ -38,13 +38,31 @@ import static org.fog.placement.SmartCityConstants.*;
  *
  */
 public class SmartCity {
+	//CONSTANTES
+	/// TODO:  DEFINE
+	public static final int LATENCY_HGW_TO_SNR = 22;
+	public static final int LATENCY_DC_TO_RFOG = 0;
+	public static final int NB_DATA_CENTER = 4;
 
-
+	//ceate a sensor
+	public static void createSensors(int userId, String appId){
+		int sensoriD = 0;
+		for (FogDevice dev: fogDevices){
+			//is a gateway
+			if (dev.getName().startsWith("gw")){
+				Sensor sensor = new Sensor("sensor-" + sensoriD, "data", userId, appId, new DeterministicDistribution(1));
+				sensor.setLatency((double) LATENCY_HGW_TO_SNR );
+				sensor.setGatewayDeviceId(dev.getId());
+				sensors.add(sensor);
+				sensoriD++;
+			}
+		}
+	}
 
 	
 	public static void main(String[] args) {
 
-		Log.printLine("Starting VRGame...");
+		Log.printLine("bruhmode on");
 
 		try {
 			Log.disable();
@@ -54,10 +72,15 @@ public class SmartCity {
 
 			CloudSim.init(num_user, calendar, trace_flag);
 
-			String appId = "vr_game"; // identifier of the application
-			
+			String appId = "smart_city"; // identifier of the application
+
+			// création du broker
 			FogBroker broker = new FogBroker("broker");
-			
+
+			// creation noeds fog
+			createFogDevices(broker.getId(), appId);
+			createSensors(broker.getId(), appId);
+
 			Application application = createApplication(appId, broker.getId());
 			application.setUserId(broker.getId());
 			
@@ -91,82 +114,103 @@ public class SmartCity {
 	 * @param userId
 	 * @param appId
 	 */
-	private static void createFogDevices(int userId, String appId) {
+//	private static void createFogDevices(int userId, String appId) {
+//
+//		// create datacenters
+//		for (int i = 0; i < NUM_DATA_CENTERS; i++) {
+//			// name, mips, ram, upBw, downBw, level, ratePerMips, busyPower, idlePower
+//			FogDevice datacenter = createFogDevice(
+//					SmartCityConstants.datacenterPrefix + i,
+//					DATA_CENTER_MIPS, DATA_CENTER_RAM,
+//					100000, 100000,
+//					0, 0,
+//					87.53, 82.44
+//			);
+//			datacenter.setParentId(-1);
+//			datacenters.add(datacenter);
+//		}
+//
+//		// create rfogs
+//		for (int i = 0; i < NUM_RFOG; i++) {
+//			FogDevice rfog = createFogDevice(
+//					SmartCityConstants.rfogPrefix + i,
+//					RFOG_MIPS, RFOG_RAM,
+//					10000, 10000,
+//					1, 0,
+//					87.53, 82.44
+//			);
+//			rfogs.add(rfog);
+//		}
+//
+//		// create lfogs
+//		for (int i = 0; i < NUM_LFOG; i++) {
+//			FogDevice lfog = createFogDevice(
+//					SmartCityConstants.lfogPrefix + i,
+//					LFOG_MIPS, LFOG_RAM,
+//					10000, 10000,
+//					2, 0,
+//					87.53, 82.44
+//			);
+//			lfogs.add(lfog);
+//		}
+//
+//		// create gateways
+//		for (int i = 0; i < NUM_GATEWAYS; i++) {
+//			FogDevice gateway = createFogDevice(
+//					SmartCityConstants.gatewayPrefix + i,
+//					GATEWAY_MIPS, GATEWAY_RAM,
+//					10000, 10000,
+//					3, 0,
+//					87.53, 82.44
+//			);
+//			gateways.add(gateway);
+//		}
+//
+//		// create sensors
+//		for (int i = 0; i < NUM_SERVICE_INSTANCES; i++) {
+//			Sensor sensor = new Sensor(
+//					SmartCityConstants.sensorPrefix + i,
+//					"SENSOR",
+//					userId,
+//					appId,
+//					new DeterministicDistribution(1)
+//			);
+//			sensors.add(sensor);
+//		}
+//
+//		// create actuators
+//		for (int i = 0; i < NUM_ACTUATORS_PER_GATEWAY * NUM_GATEWAYS; i++) {
+//			Actuator actuator = new Actuator(
+//					SmartCityConstants.actuatorPrefix + i,
+//					userId,
+//					appId,
+//					SmartCityConstants.actuatorPrefix + i
+//			);
+//			actuators.add(actuator);
+//		}
+//
+//
+//	}private static void addRFOG(int id, int userId, String appId, int parentId){
+		FogDevice rfog
+	}
 
-		// create datacenters
-		for (int i = 0; i < NUM_DATA_CENTERS; i++) {
-			// name, mips, ram, upBw, downBw, level, ratePerMips, busyPower, idlePower
-			FogDevice datacenter = createFogDevice(
-					SmartCityConstants.datacenterPrefix + i,
-					DATA_CENTER_MIPS, DATA_CENTER_RAM,
-					100000, 100000,
-					0, 0,
-					87.53, 82.44
-			);
-			datacenter.setParentId(-1);
-			datacenters.add(datacenter);
+	private static void createFogDevices(int userId, String appId){
+		for (int i=0; i<NB_DATA_CENTER; i++){
+			//TODO : c'est qui ces données en param
+			FogDevice dc = createFogDevice("dc-"+i, 1000, 1000*1000, 100, 10000, 0, 0.01, 16*103, 16*83.25);
+			dc.setParentId(-1);
+			fogDevices.add(dc);
+			for (int j=0;j<NB_DATA_CENTER;j++){
+				FogDevice rfog = createFogDevice("rfog-"+id, 500, 10*1000, 10000, 10000, 1, 0.0, 107.339, 83.4333);
+				rfog.setParentId(dc.getParentId());
+				rfog.setUplinkLatency(LatencyDCToRFOG);
+				fogDevices.add(rfog);
+				for(int i=0;i<nbOfLFOGperRFOG;i++){
+					addLFOG(nbOfLFOGperRFOG*id+i, userId, appId, rfog.getId());
+				}
+			}
+
 		}
-
-		// create rfogs
-		for (int i = 0; i < NUM_RFOG; i++) {
-			FogDevice rfog = createFogDevice(
-					SmartCityConstants.rfogPrefix + i,
-					RFOG_MIPS, RFOG_RAM,
-					10000, 10000,
-					1, 0,
-					87.53, 82.44
-			);
-			rfogs.add(rfog);
-		}
-
-		// create lfogs
-		for (int i = 0; i < NUM_LFOG; i++) {
-			FogDevice lfog = createFogDevice(
-					SmartCityConstants.lfogPrefix + i,
-					LFOG_MIPS, LFOG_RAM,
-					10000, 10000,
-					2, 0,
-					87.53, 82.44
-			);
-			lfogs.add(lfog);
-		}
-
-		// create gateways
-		for (int i = 0; i < NUM_GATEWAYS; i++) {
-			FogDevice gateway = createFogDevice(
-					SmartCityConstants.gatewayPrefix + i,
-					GATEWAY_MIPS, GATEWAY_RAM,
-					10000, 10000,
-					3, 0,
-					87.53, 82.44
-			);
-			gateways.add(gateway);
-		}
-
-		// create sensors
-		for (int i = 0; i < NUM_SERVICE_INSTANCES; i++) {
-			Sensor sensor = new Sensor(
-					SmartCityConstants.sensorPrefix + i,
-					"SENSOR",
-					userId,
-					appId,
-					new DeterministicDistribution(1)
-			);
-			sensors.add(sensor);
-		}
-
-		// create actuators
-		for (int i = 0; i < NUM_ACTUATORS_PER_GATEWAY * NUM_GATEWAYS; i++) {
-			Actuator actuator = new Actuator(
-					SmartCityConstants.actuatorPrefix + i,
-					userId,
-					appId,
-					SmartCityConstants.actuatorPrefix + i
-			);
-			actuators.add(actuator);
-		}
-
-
 	}
 
 
