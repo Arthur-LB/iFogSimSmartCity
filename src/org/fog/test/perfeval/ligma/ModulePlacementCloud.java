@@ -5,6 +5,7 @@ import org.fog.application.Application;
 import org.fog.entities.FogDevice;
 import org.fog.placement.ModuleMapping;
 import org.fog.placement.ModulePlacement;
+import org.fog.test.perfeval.SmartCityPkg.SmartCityConstants;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -63,7 +64,7 @@ public class ModulePlacementCloud extends ModulePlacement {
                     a.addAll(b);
                     return a;
                 }));
-        ArrayList<FogDevice> datacenters_list = this.findDeviceStartingWith("dc");
+        ArrayList<FogDevice> datacenters_list = this.findDeviceStartingWith(SmartCityConstants.datacenterPrefix);
         for (String module : modulesToPlace){
             int index = (int)(Math.random() * datacenters_list.size());
             moduleMapping.addModuleToDevice(module, datacenters_list.get(index).getName());

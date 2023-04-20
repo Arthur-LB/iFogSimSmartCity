@@ -1,6 +1,4 @@
 
-M
-src/topologies/routerTopology,5\f\5f61abbd08a4869122b7abe521938435a3b1f31b
 P
  src/org/fog/gui/core/Bridge.java,5\f\5fd1a1a2a53f594456b1fe1de5ec8da750488850
 V
@@ -71,8 +69,6 @@ V
 &src/org/fog/gui/dialog/AddAppEdge.java,b\1\b12d70e2f49fe52a09da85b9a41b5a204bad4ec3
 [
 +src/org/fog/gui/dialog/AddSensorModule.java,8\0\80767f2efa7507e4c7af4d72c7e624481183a02b
-S
-#src/org/fog/test/CleanFromJson.java,a\9\a92e4863293cd81a96b48413858244ec3b294598
 R
 "src/org/fog/utils/GeoLocation.java,7\e\7e0362650d4295ce347ef586affaf7482c4f7942
 V
@@ -115,8 +111,6 @@ f
 0src/org/fog/utils/distribution/Distribution.java,c\5\c509c5ffe7b424e41dddca2c50ef5651083ec189
 S
 #src/org/fog/entities/FogBroker.java,8\e\8e8968bba308f9f559e094eb7e593795bd0172a5
-P
- src/org/fog/entities/Sensor.java,6\9\6985d49a3fbde24f4bdae977ff2859543b020f4c
 b
 2src/org/fog/entities/FogDeviceCharacteristics.java,6\6\66f5281a42019ca4aa7f97d3c70035ad5835e5c4
 R
@@ -129,8 +123,6 @@ b
 2src/org/fog/scheduler/StreamOperatorScheduler.java,1\3\1335b58c286ecac72abce1ffe3a8ad5a22fe750a
 Y
 )src/org/fog/scheduler/TupleScheduler.java,1\0\100f20554474a858f2cdbd55967be44ffd03967a
-Z
-*src/org/fog/placement/ModulePlacement.java,7\7\7740e8bc01177136196a650bcde340563e5c40bf
 T
 $src/org/fog/application/AppEdge.java,7\d\7d47c9354e174687a573b445fbbe402127be2dc4
 V
@@ -333,8 +325,6 @@ i
 9src/org/cloudbus/cloudsim/sdn/example/WorkloadParser.java,5\2\52eb0f5053534cf734ea2336ed9f3e846248ef4b
 
 Osrc/org/cloudbus/cloudsim/sdn/example/VmAllocationPolicyMipsLeastFullFirst.java,7\f\7f839e13a3504450ab4dc41269555a2d0ef7f8fd
-N
-topologies/test_instance_count,4\3\438561fc82327c947b371dc229fa28c23e19b626
 ƒ
 Ssrc/org/cloudbus/cloudsim/sdn/example/VmAllocationPolicyCombinedLeastFullFirst.java,d\5\d5b1d9b44239115c0923b95c783226b1708bc356
 c
@@ -353,8 +343,6 @@ Osrc/org/cloudbus/cloudsim/sdn/example/policies/VmSchedulerTimeSharedEnergy.java
 Xsrc/org/cloudbus/cloudsim/sdn/example/policies/VmAllocationPolicyMipsLeastFullFirst.java,2\2\223ee04ef69fea692e70bebc4247dab867c1d56d
 ‹
 [src/org/cloudbus/cloudsim/sdn/example/policies/VmAllocationPolicyCombinedMostFullFirst.java,d\4\d4b1fdcdee2fb51d373f78c8f1d38ecc345bfc25
-I
-topologies/routerTopology,7\5\7507f20f31ccfef94447fff29899e10ffcc8f7b8
 Œ
 \src/org/cloudbus/cloudsim/sdn/example/policies/VmAllocationPolicyCombinedLeastFullFirst.java,1\c\1c08a00694882d116f1045c06fca38622dc89025
 P
@@ -383,8 +371,6 @@ Psrc/org/cloudbus/cloudsim/sdn/overbooking/OverbookingNetworkOperatingSystem.jav
 Lsrc/org/cloudbus/cloudsim/sdn/overbooking/VmAllocationPolicyOverbooking.java,d\0\d092d7655f4637f437d1a321833479b511549494
 w
 Gsrc/org/cloudbus/cloudsim/sdn/overbooking/PeProvisionerOverbooking.java,b\0\b00d1dd038f01fb01810616d808831708e274e53
-]
--src/org/cloudbus/cloudsim/core/SimEntity.java,a\1\a1854ed39426165da4f80e8aebb02df94c502c62
 a
 1src/org/cloudbus/cloudsim/core/DeferredQueue.java,4\7\4711ea6a5abedce4ed904b6dd0b597a1499c9677
 k
@@ -395,8 +381,6 @@ k
 0src/org/cloudbus/cloudsim/core/CloudSimTags.java,e\8\e8a7c44f5362bf608f2e44c13fced10521d0356c
 d
 4src/org/cloudbus/cloudsim/core/CloudSimShutdown.java,c\2\c21e00f01198b9e43f1cf1a664cdf3746b91a267
-\
-,src/org/cloudbus/cloudsim/core/CloudSim.java,d\3\d385250f9a14fdf2140bbc9cf94708ed2f516194
 h
 8src/org/cloudbus/cloudsim/core/predicates/Predicate.java,b\b\bbf7ef329402786fb5f6eca7568d97d398bb4974
 l
@@ -515,10 +499,6 @@ q
 Asrc/org/cloudbus/cloudsim/network/datacenter/NetworkCloudlet.java,2\3\233b76e35fa7ba0e810203a428b83e3b732a25ca
 q
 Asrc/org/cloudbus/cloudsim/network/datacenter/AggregateSwitch.java,2\b\2bf7960dbf65f7b3440dee4285ac8730e8807911
-h
-8src/org/cloudbus/cloudsim/network/DelayMatrix_Float.java,3\e\3e4c358706d80ad48012c4471dbd53f31aaabde8
-g
-7src/org/cloudbus/cloudsim/network/TopologicalGraph.java,7\d\7d510653b3cffc2ec82e3dee1bdf5138851a1a80
 l
 <src/org/cloudbus/cloudsim/network/datacenter/RootSwitch.java,d\8\d805c2265222c32f2b8ee54b223e23fbb658e0fb
 l
@@ -569,9 +549,6 @@ o
 ?src/org/cloudbus/cloudsim/provisioners/PeProvisionerSimple.java,0\2\02e58b76087c269e687842f038d67ebd6c1e63d2
 h
 8src/org/cloudbus/cloudsim/distributions/ParetoDistr.java,9\9\9914de1684e72409c9de034a23059d5eaef72d56
-:
-
-output.txt,a\d\adbe6c7d3c0d8b19ecd492bec9532c13a6e1c9ad
 s
 Csrc/org/cloudbus/cloudsim/distributions/ContinuousDistribution.java,5\8\58fd10099f4fa988688dfd9939cf7e98693507e3
 n
@@ -582,36 +559,25 @@ i
 9src/org/cloudbus/cloudsim/distributions/UniformDistr.java,d\1\d13bda56cdfa341fa549db55946586b59fc52fb2
 g
 7src/org/cloudbus/cloudsim/distributions/GammaDistr.java,2\5\2586c23f331cb9dabf768775d54f5801a896e5f1
-9
-	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 C
 iFogSim1-master.iml,9\6\96f2c39f905897a0764bb7f9efd252b3ff87b2ad
 @
 output/vrGameFog,d\1\d100a3686f83f42b5a6d59e2348659f8b48bc65a
 B
 output/vrGameCloud,1\a\1a47332a0b5cf98dad9db121eef5464ad0ee466d
-E
-src/executeTuple.useq,4\d\4dd5ff97d6d570300e27a363a39cc2d2e11c9190
-c
-3src/org/fog/placement/ModulePlacementOnlyCloud.java,2\0\2085bfc760a0563367f1d79a54641653c1c0b1e7
-a
-1src/org/fog/placement/ModulePlacementMapping.java,4\4\44164c25e09b450ba4cc4a357d5efed1dda53e7e
-c
-3src/org/fog/placement/ModulePlacementEdgewards.java,7\9\79e61d3315f0827cec7dad673619d2cce0f82fe4
-X
-(src/org/fog/placement/ModuleMapping.java,1\a\1a2e3fef783ff8f149f3c981ae9967c3a267f246
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
-`
-0src/org/fog/placement/ModulePlacementRandom.java,c\3\c335accbf2a042431aea93f87a8d19e3130e881d
-]
--src/org/fog/placement/ModulePlacementDSC.java,3\f\3f6461f2a48ccf8153537c39f743b4d6b5b930f9
-]
--src/org/fog/placement/ModulePlacementASC.java,2\0\200f79f3dd9ce945459cf1ca89c2ec595031e484
 a
 1src/org/fog/policy/AppModuleAllocationPolicy.java,3\e\3e6535e8b26c879dde7cdaa410a5763902185240
-X
-(src/org/fog/application/Application.java,3\4\3421d43aad00530c4e924e39c639740c9a10aad9
 T
 $src/org/fog/application/AppLoop.java,7\9\79a0b2416ee5314df6a86be031e3b2384d309365
+U
+%src/org/fog/placement/Controller.java,c\0\c0f376fbc81ffee0050eb976fa62c72de3589f9a
+W
+'src/org/fog/utils/FogEntityFactory.java,c\9\c9c4e770dbbafbd95447b1f8df1aa1d4ec07bb79
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+:
+
+output.txt,a\d\adbe6c7d3c0d8b19ecd492bec9532c13a6e1c9ad

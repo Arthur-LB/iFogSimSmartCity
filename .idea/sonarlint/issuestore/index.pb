@@ -1,6 +1,4 @@
 
-M
-src/topologies/routerTopology,5\f\5f61abbd08a4869122b7abe521938435a3b1f31b
 H
 .idea/libraries/jars.xml,f\1\f18ece8a2cd07ff8ef40d4ead0c14a9ab080b4bf
 U
@@ -15,27 +13,18 @@ F
 results/results-vrgame,c\e\ce66970e8416c9127964ac37d57fb6f249cea22d
 O
 topologies/Copy of vr_game_topo,6\2\625a198cc10ace6f3c141b9e7b5878ceb38d5d44
-N
-topologies/test_instance_count,4\3\438561fc82327c947b371dc229fa28c23e19b626
 G
 topologies/vr_game_topo,b\4\b46f9c48ed73bcac5cf86b88788726a115ae8da2
 I
 topologies/dcns_game_topo,1\8\18e6fb7d8a3a96ee3fb3e1b18daf415009a745ec
-I
-topologies/routerTopology,7\5\7507f20f31ccfef94447fff29899e10ffcc8f7b8
 P
  topologies/test_instance_count_4,c\0\c05768886c7e2e34b5b171e07acb4e48bdd4b89d
-:
-
-output.txt,a\d\adbe6c7d3c0d8b19ecd492bec9532c13a6e1c9ad
 C
 iFogSim1-master.iml,9\6\96f2c39f905897a0764bb7f9efd252b3ff87b2ad
 @
 output/vrGameFog,d\1\d100a3686f83f42b5a6d59e2348659f8b48bc65a
 B
 output/vrGameCloud,1\a\1a47332a0b5cf98dad9db121eef5464ad0ee466d
-E
-src/executeTuple.useq,4\d\4dd5ff97d6d570300e27a363a39cc2d2e11c9190
 e
 5src/org/cloudbus/cloudsim/sdn/graph/dialog/About.java,f\8\f8f5a0363139b07615baae4396b4369721cf5752
 Q
@@ -112,8 +101,6 @@ Z
 *src/org/cloudbus/cloudsim/sdn/Channel.java,a\f\afbfed9704319d21d4ab267f5be8c38bfe998cd2
 Y
 )src/org/cloudbus/cloudsim/util/Check.java,5\0\50a69c3af2c13327a1c2f0aa5f43c03799e3b5f4
-S
-#src/org/fog/test/CleanFromJson.java,a\9\a92e4863293cd81a96b48413858244ec3b294598
 k
 ;src/org/cloudbus/cloudsim/core/CloudInformationService.java,0\c\0cc23b9512cd35427014379e1f69bc5ab51e80aa
 W
@@ -128,8 +115,6 @@ k
 ;src/org/cloudbus/cloudsim/CloudletSchedulerSpaceShared.java,a\2\a21f128a37d343772ce2e02e49f3542a61fd12cd
 j
 :src/org/cloudbus/cloudsim/CloudletSchedulerTimeShared.java,8\2\82e926a1d7ca711c2f86ef2372f62e5aa3154346
-\
-,src/org/cloudbus/cloudsim/core/CloudSim.java,d\3\d385250f9a14fdf2140bbc9cf94708ed2f516194
 d
 4src/org/cloudbus/cloudsim/core/CloudSimShutdown.java,c\2\c21e00f01198b9e43f1cf1a664cdf3746b91a267
 `
@@ -158,8 +143,6 @@ h
 ,src/org/cloudbus/cloudsim/DataCloudTags.java,b\3\b3cad1f10d0008218fb760f46ff30a1003e62304
 a
 1src/org/cloudbus/cloudsim/core/DeferredQueue.java,4\7\4711ea6a5abedce4ed904b6dd0b597a1499c9677
-h
-8src/org/cloudbus/cloudsim/network/DelayMatrix_Float.java,3\e\3e4c358706d80ad48012c4471dbd53f31aaabde8
 m
 =src/org/fog/utils/distribution/DeterministicDistribution.java,c\b\cb1d5186b4cc67603c30636f5176b75c70d3124a
 `
@@ -264,8 +247,6 @@ n
 ,src/org/cloudbus/cloudsim/sdn/Middlebox.java,c\e\ce3937f421369f5ada4c28e9fe03310dfd108eb3
 Y
 )src/org/fog/utils/ModuleLaunchConfig.java,f\d\fdaf9837d425b4ad959873cede0c5c69017deac7
-Z
-*src/org/fog/placement/ModulePlacement.java,7\7\7740e8bc01177136196a650bcde340563e5c40bf
 u
 Esrc/org/cloudbus/cloudsim/network/datacenter/NetDatacenterBroker.java,e\d\ed7c1213b3c3bbf7691aa32bc3935a87d52556b4
 q
@@ -428,8 +409,6 @@ j
 :src/org/cloudbus/cloudsim/provisioners/RamProvisioner.java,e\4\e47bc87f1b081491c0c9a62f75204720d36e2187
 p
 @src/org/cloudbus/cloudsim/provisioners/RamProvisionerSimple.java,d\c\dc64a3322463785e8d03a11ed96ba9743d8aac5c
-9
-	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 Z
 *src/org/cloudbus/cloudsim/sdn/Request.java,f\9\f90f94688e1f7e6636e9f7cd88f7b828c8df4407
 Z
@@ -458,14 +437,10 @@ R
 "src/org/fog/gui/dialog/SDNRun.java,6\b\6b643e1bd1818096244243025c0949e172987969
 i
 9src/org/fog/application/selectivity/SelectivityModel.java,6\3\636dd44191d245527c5c9e05036ba2b5a906a1ec
-P
- src/org/fog/entities/Sensor.java,6\9\6985d49a3fbde24f4bdae977ff2859543b020f4c
 S
 #src/org/fog/gui/core/SensorGui.java,c\e\ce8400d4d27c7d307a5e6ff9948778a2d5c9dd37
 V
 &src/org/fog/gui/core/SensorModule.java,a\0\a0dd7fb6d5574778d06e3f2bc4335bc0922b801a
-]
--src/org/cloudbus/cloudsim/core/SimEntity.java,a\1\a1854ed39426165da4f80e8aebb02df94c502c62
 \
 ,src/org/cloudbus/cloudsim/core/SimEvent.java,d\5\d5a789fa30945136ac45fbc4458549e24bdd9081
 w
@@ -496,8 +471,6 @@ Z
 *src/org/cloudbus/cloudsim/sdn/TimedVm.java,9\0\90e33b3b047b625bf754981f4782c7c94651c191
 Q
 !src/org/fog/utils/TimeKeeper.java,d\6\d6cc696df4a7bb5bab40fdfefb30eab55884df31
-g
-7src/org/cloudbus/cloudsim/network/TopologicalGraph.java,7\d\7d510653b3cffc2ec82e3dee1bdf5138851a1a80
 f
 6src/org/cloudbus/cloudsim/network/TopologicalLink.java,5\4\54d918b49bf192a3f9ea4f3707727ef3432b6691
 f
@@ -592,26 +565,19 @@ i
 9src/org/cloudbus/cloudsim/sdn/example/WorkloadParser.java,5\2\52eb0f5053534cf734ea2336ed9f3e846248ef4b
 f
 6src/org/cloudbus/cloudsim/distributions/ZipfDistr.java,0\f\0f049c8f093a057b1376b86b3a6a0025af3088e5
-c
-3src/org/fog/placement/ModulePlacementOnlyCloud.java,2\0\2085bfc760a0563367f1d79a54641653c1c0b1e7
-a
-1src/org/fog/placement/ModulePlacementMapping.java,4\4\44164c25e09b450ba4cc4a357d5efed1dda53e7e
-c
-3src/org/fog/placement/ModulePlacementEdgewards.java,7\9\79e61d3315f0827cec7dad673619d2cce0f82fe4
-X
-(src/org/fog/placement/ModuleMapping.java,1\a\1a2e3fef783ff8f149f3c981ae9967c3a267f246
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
-]
--src/org/fog/placement/ModulePlacementASC.java,2\0\200f79f3dd9ce945459cf1ca89c2ec595031e484
-]
--src/org/fog/placement/ModulePlacementDSC.java,3\f\3f6461f2a48ccf8153537c39f743b4d6b5b930f9
-`
-0src/org/fog/placement/ModulePlacementRandom.java,c\3\c335accbf2a042431aea93f87a8d19e3130e881d
 a
 1src/org/fog/policy/AppModuleAllocationPolicy.java,3\e\3e6535e8b26c879dde7cdaa410a5763902185240
-X
-(src/org/fog/application/Application.java,3\4\3421d43aad00530c4e924e39c639740c9a10aad9
 T
 $src/org/fog/application/AppLoop.java,7\9\79a0b2416ee5314df6a86be031e3b2384d309365
+U
+%src/org/fog/placement/Controller.java,c\0\c0f376fbc81ffee0050eb976fa62c72de3589f9a
+W
+'src/org/fog/utils/FogEntityFactory.java,c\9\c9c4e770dbbafbd95447b1f8df1aa1d4ec07bb79
+:
+
+output.txt,a\d\adbe6c7d3c0d8b19ecd492bec9532c13a6e1c9ad
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d

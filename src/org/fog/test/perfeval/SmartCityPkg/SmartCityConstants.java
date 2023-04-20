@@ -1,4 +1,4 @@
-package org.fog.placement;
+package org.fog.test.perfeval.SmartCityPkg;
 
 import org.fog.entities.Actuator;
 import org.fog.entities.FogDevice;
@@ -49,18 +49,19 @@ public class SmartCityConstants {
     public static final int DATA_CENTER_RAM = 1000 * 1000;
     
     public static final int NUM_RFOG = 10; //2 RFOG per DC
+    public static final int NUM_RFOG_PER_DC = 2;
     public static final int RFOG_MIPS = 500;
     public static final int RFOG_RAM = 10 * 1000;
     public static final int NUM_LFOG = 20; //2 LFOG per RFOG
+    public static final int NUM_LFOG_PER_RFOG = 2;
     public static final int LFOG_MIPS = 200;
     public static final int LFOG_RAM = 1000;
     public static final int NUM_GATEWAYS = 100; //5 HGW per LFOG
+    public static final int NUM_GATEWAYS_PER_LFOG = 5;
     public static final int GATEWAY_MIPS = 100;
     public static final int GATEWAY_RAM = 1000;
     public static final int NUM_SENSORS_PER_GATEWAY = 10;
-
-    public static final int NUM_ACTUATORS_PER_GATEWAY = 1;
-    public static final int NUM_SERVICE_INSTANCES = NUM_GATEWAYS * NUM_SENSORS_PER_GATEWAY; // 1 service = 1 sensor
+    public static final int NUM_SERVICE_INSTANCES = NUM_GATEWAYS * NUM_SENSORS_PER_GATEWAY;
     public static final double REPRODUCTION_RATE = 0.1;
     public static final int DATA_PROCESSING_REQUIREMENT_MIN = 10;
     public static final int DATA_PROCESSING_REQUIREMENT_MAX = 100;
@@ -75,6 +76,8 @@ public class SmartCityConstants {
     public static final int DATACENTER_TO_DATACENTER_LATENCY = 1000;
     public static final int SIMULATION_TIME = 1000 * 60 * 60; // 1 hour in seconds
     public static final int NUM_SIMULATIONS = 10;
+
+    public static final String SENSOR_TUPLE_TYPE = "data";
 
     public static final float leftLatencyDC = 1000;
     public static final float rightLatencyDC = 1000;
@@ -93,9 +96,9 @@ public class SmartCityConstants {
     public static List<FogDevice> fogDevices = new ArrayList<FogDevice>();
 
     public static String datacenterPrefix = "DC-";
-    public static String rfogPrefix = "RFOG-";
-    public static String lfogPrefix = "LFOG-";
-    public static String gatewayPrefix = "HGW-";
-    public static String sensorPrefix = "s-";
-    public static String actuatorPrefix = "a-";
+    public static String rfogPrefix = "rfog-";
+    public static String lfogPrefix = "lfog-";
+    public static String gatewayPrefix = "gw-";
+    public static String sensorPrefix = "sensor-";
+    public static String actuatorPrefix = "actuator-";
 }

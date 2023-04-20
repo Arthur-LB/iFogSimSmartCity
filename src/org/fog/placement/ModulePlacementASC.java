@@ -7,9 +7,6 @@ import org.fog.entities.FogDevice;
 import java.util.*;
 
 public class ModulePlacementASC extends ModulePlacement{
-
-	private ModuleMapping moduleMapping;
-
 	@Override
 	protected void mapModules() {
 		Map<String, List<String>> mapping = moduleMapping.getModuleMapping();
@@ -51,14 +48,5 @@ public class ModulePlacementASC extends ModulePlacement{
 			getModuleInstanceCountMap().put(device.getId(), new HashMap<String, Integer>());
 		mapModules();
 	}
-	
-	
-	public ModuleMapping getModuleMapping() {
-		return moduleMapping;
-	}
-	public void setModuleMapping(ModuleMapping moduleMapping) {
-		this.moduleMapping = moduleMapping;
-	}
-
 	
 }

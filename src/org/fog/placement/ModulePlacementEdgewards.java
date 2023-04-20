@@ -18,8 +18,6 @@ import org.fog.entities.Tuple;
 import org.fog.utils.Logger;
 
 public class ModulePlacementEdgewards extends ModulePlacement{
-	
-	protected ModuleMapping moduleMapping;
 	protected List<Sensor> sensors;
 	protected List<Actuator> actuators;
 	protected Map<Integer, Double> currentCpuLoad;
@@ -463,14 +461,6 @@ public class ModulePlacementEdgewards extends ModulePlacement{
 				cloud = device;
 		}
 		return getPaths(cloud.getId());
-	}
-	
-	public ModuleMapping getModuleMapping() {
-		return moduleMapping;
-	}
-
-	public void setModuleMapping(ModuleMapping moduleMapping) {
-		this.moduleMapping = moduleMapping;
 	}
 
 	public Map<Integer, List<String>> getCurrentModuleMap() {

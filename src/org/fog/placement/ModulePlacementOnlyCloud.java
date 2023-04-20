@@ -1,5 +1,6 @@
 package org.fog.placement;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -12,90 +13,78 @@ import org.fog.entities.Actuator;
 import org.fog.entities.FogDevice;
 import org.fog.entities.Sensor;
 import org.fog.entities.Tuple;
+import org.fog.test.perfeval.SmartCityPkg.SmartCityConstants;
 
 public class ModulePlacementOnlyCloud extends ModulePlacement{
-	
-	private List<Sensor> sensors;
-	private List<Actuator> actuators;
-	private int cloudId;
-	
-	public ModulePlacementOnlyCloud(List<FogDevice> fogDevices, List<Sensor> sensors, List<Actuator> actuators, Application application){
-		this.setFogDevices(fogDevices);
-		this.setApplication(application);
-		this.setSensors(sensors);
-		this.setActuators(actuators);
-		this.setModuleToDeviceMap(new HashMap<String, List<Integer>>());
-		this.setDeviceToModuleMap(new HashMap<Integer, List<AppModule>>());
-		this.setModuleInstanceCountMap(new HashMap<Integer, Map<String, Integer>>());
-		this.cloudId = CloudSim.getEntityId("cloud");
-		mapModules();
-		computeModuleInstanceCounts();
-	}
-	
-	private void computeModuleInstanceCounts(){
-		FogDevice cloud = getDeviceById(CloudSim.getEntityId("cloud"));
-		getModuleInstanceCountMap().put(cloud.getId(), new HashMap<String, Integer>());
-		
-		for(Sensor sensor : getSensors()){
-			String sensorType = sensor.getSensorName();
-			if(!getModuleInstanceCountMap().get(cloud.getId()).containsKey(sensorType))
-				getModuleInstanceCountMap().get(cloud.getId()).put(sensorType, 0);
-			getModuleInstanceCountMap().get(cloud.getId()).put(sensorType, getModuleInstanceCountMap().get(cloud.getId()).get(sensorType)+1);
-		}
-		
-		for(Actuator actuator : getActuators()){
-			String actuatorType = actuator.getActuatorType();
-			if(!getModuleInstanceCountMap().get(cloud.getId()).containsKey(actuatorType))
-				getModuleInstanceCountMap().get(cloud.getId()).put(actuatorType, 0);
-			getModuleInstanceCountMap().get(cloud.getId()).put(actuatorType, getModuleInstanceCountMap().get(cloud.getId()).get(actuatorType)+1);
-		}
-		
-		while(!isModuleInstanceCalculationComplete()){
-			for(AppModule module : getApplication().getModules()){
-				int maxInstances = 0;
-				for(AppEdge edge : getApplication().getEdges()){
-					if(!getModuleInstanceCountMap().get(cloudId).containsKey(edge.getSource()))
-						continue;
-					if(edge.getDestination().equals(module.getName()) && edge.getDirection()==Tuple.UP){
-						maxInstances = Math.max(maxInstances, getModuleInstanceCountMap().get(cloudId).get(edge.getSource()));
-					}
-				}
-				getModuleInstanceCountMap().get(cloudId).put(module.getName(), maxInstances);
-			}
-		}
-		System.out.println(getModuleInstanceCountMap());
-	}
 
-	private boolean isModuleInstanceCalculationComplete() {
-		for(AppModule module : getApplication().getModules()){
-			if(!getModuleInstanceCountMap().get(cloudId).containsKey(module.getName()))
-				return false;
-		}
-		return true;
-	}
 
 	@Override
 	protected void mapModules() {
-		List<AppModule> modules = getApplication().getModules();
-		for(AppModule module : modules){
-			FogDevice cloud = getDeviceById(cloudId);
-			createModuleInstanceOnDevice(module, cloud);
+		Map<String, List<String>> mapping = moduleMapping.getModuleMapping();
+		for(String deviceName : mapping.keySet()){
+			FogDevice device = getDeviceByName(deviceName);
+			for(String moduleName : mapping.get(deviceName)){
+
+				AppModule module = getApplication().getModuleByName(moduleName);
+				if(module == null)
+					continue;
+				createModuleInstanceOnDevice(module, device);
+				//getModuleInstanceCountMap().get(device.getId()).put(moduleName, mapping.get(deviceName).get(moduleName));
+			}
 		}
 	}
 
-	public List<Actuator> getActuators() {
-		return actuators;
+	public ModulePlacementOnlyCloud(List<FogDevice> fogDevices, Application application,
+								ModuleMapping moduleMapping){
+		this.setFogDevices(fogDevices);
+		this.setApplication(application);
+		this.setModuleMapping(moduleMapping);
+		this.setModuleToDeviceMap(new HashMap<>());
+		this.setDeviceToModuleMap(new HashMap<>());
+		this.setModuleInstanceCountMap(new HashMap<>());
+		for(FogDevice device : getFogDevices()) {
+			getModuleInstanceCountMap().put(device.getId(), new HashMap<>());
+		}
+		// Place remaining modules into datacenters
+		this.placeRemainingModules();
+		// map all modules
+		this.mapModules();
 	}
 
-	public void setActuators(List<Actuator> actuators) {
-		this.actuators = actuators;
+
+	public void placeRemainingModules(){
+		ArrayList<String> modulesToPlace = getModulesToPlace(
+				this.getModuleMapping().getModuleMapping().values().stream()
+						.reduce(new ArrayList<>(), (a, b) -> {
+							a.addAll(b);
+							return a;
+						}));
+		ArrayList<FogDevice> datacenters_list = this.findDeviceStartingWith(SmartCityConstants.datacenterPrefix);
+		int index = 0;
+		for (String module : modulesToPlace){
+			moduleMapping.addModuleToDevice(module, datacenters_list.get(index).getName());
+			index = (index + 1) % datacenters_list.size();
+		}
 	}
 
-	public List<Sensor> getSensors() {
-		return sensors;
+	private ArrayList<String> getModulesToPlace(List<String> placedModules){
+		Application app = getApplication();
+		ArrayList<String> modulesToPlace = new ArrayList<String>();
+		for(AppModule module : app.getModules()){
+			if(!placedModules.contains(module.getName()))
+				modulesToPlace.add(module.getName());
+		}
+		return modulesToPlace;
 	}
 
-	public void setSensors(List<Sensor> sensors) {
-		this.sensors = sensors;
+	public ArrayList<FogDevice> findDeviceStartingWith(String searchString) {
+		ArrayList<FogDevice> devices = new ArrayList<FogDevice>();
+		for (FogDevice device : getFogDevices()) {
+			String deviceName = device.getName();
+			if(deviceName.startsWith(searchString)){
+				devices.add(device);
+			}
+		}
+		return devices;
 	}
 }

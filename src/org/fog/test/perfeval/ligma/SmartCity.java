@@ -82,7 +82,7 @@ public class SmartCity {
             // 3- La création des nœuds de Fog ainsi que les capteurs.
             createFogDevices(broker.getId(), appId);
             createSensors(broker.getId(), appId);
-            //printDevices();
+            printDevices();
 
             // 4- La création de l'application (les éléments logiques) du scénario :
             Application application = createApplication(appId, broker.getId());
@@ -139,6 +139,7 @@ public class SmartCity {
             // 8- Le calcul des latences existant entre les nœuds de Fog.
             System.out.println("Latencies computation...");
             TopologicalGraph graph = computeTopologicalGraph(fogDevices);
+            System.out.println("Graph : " + graph);
             new DelayMatrix_Float(graph, false);
 
             TimeKeeper.getInstance().setSimulationStartTime(Calendar.getInstance().getTimeInMillis());
@@ -321,6 +322,7 @@ public class SmartCity {
         gateway.setParentId(parentId);
         gateway.setUplinkLatency(LatencyLFOGToHGW);
         fogDevices.add(gateway);
+        System.out.println("Gateway " + id + " created");
     }
 
 

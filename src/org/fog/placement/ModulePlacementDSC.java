@@ -8,8 +8,6 @@ import java.util.*;
 
 public class ModulePlacementDSC extends ModulePlacement{
 
-	private ModuleMapping moduleMapping;
-
 	@Override
 	protected void mapModules() {
 		List<FogDevice> fogDevices = getFogDevices();
@@ -51,14 +49,6 @@ public class ModulePlacementDSC extends ModulePlacement{
 		for(FogDevice device : getFogDevices())
 			getModuleInstanceCountMap().put(device.getId(), new HashMap<String, Integer>());
 		mapModules();
-	}
-
-
-	public ModuleMapping getModuleMapping() {
-		return moduleMapping;
-	}
-	public void setModuleMapping(ModuleMapping moduleMapping) {
-		this.moduleMapping = moduleMapping;
 	}
 
 

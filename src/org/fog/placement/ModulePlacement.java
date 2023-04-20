@@ -15,7 +15,8 @@ public abstract class ModulePlacement {
 	public static int ONLY_CLOUD = 1;
 	public static int EDGEWARDS = 2;
 	public static int USER_MAPPING = 3;
-	
+
+	protected ModuleMapping moduleMapping;
 	private List<FogDevice> fogDevices;
 	private Application application;
 	private static Map<String, List<Integer>> moduleToDeviceMap;
@@ -23,9 +24,16 @@ public abstract class ModulePlacement {
 	private Map<Integer, Map<String, Integer>> moduleInstanceCountMap;
 	
 	protected abstract void mapModules();
-	
+
 	protected boolean canBeCreated(FogDevice fogDevice, AppModule module){
 		return fogDevice.getVmAllocationPolicy().allocateHostForVm(module);
+	}
+
+	public ModuleMapping getModuleMapping() {
+		return moduleMapping;
+	}
+	public void setModuleMapping(ModuleMapping moduleMapping) {
+		this.moduleMapping = moduleMapping;
 	}
 	
 	protected int getParentDevice(int fogDeviceId){
